@@ -1,0 +1,40 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/public/ 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*)$ /public/$1 
+#RewriteRule ^ index.php [L]
+RewriteRule ^(/)?$ public/index.php [L] 
+</IfModule>
+
+RewriteCond %{HTTP_REFERER} !^http://bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://internetamca.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://internetamca.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://internetamca.com.bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://internetamca.com.bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.internetamca.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.internetamca.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.internetamca.com.bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.internetamca.com.bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://internetamca.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://internetamca.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://internetamca.com.bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://internetamca.com.bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.bunyamingurses.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.internetamca.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.internetamca.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.internetamca.com.bunyamingurses.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.internetamca.com.bunyamingurses.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
